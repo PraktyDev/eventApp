@@ -1,18 +1,11 @@
 import { MdLocationOn } from "react-icons/md";
 import { CiSquarePlus } from "react-icons/ci";
 import Image from "next/image";
-import Card from "@/components/Card";
 import Link from "next/link";
 import HomeSearch from "@/components/HomeSearch";
 import CardDisplay from "@/components/CardDisplay";
+import UpcomEvent from "@/components/UpcomEvent";
 
-const fetchEvents =async() =>{
-  const response = await fetch('http://localhost:3000/admin/add-event/api');
-  if(!response.ok){
-    throw new Error("Unable to fetch data")
-  }
-  return response.json();
-}
 
 const fetchBannerEvent =async() =>{
   const id = "663dac922a61e1339adf770a";
@@ -20,26 +13,14 @@ const fetchBannerEvent =async() =>{
   return response.json();
 }
 
-const fetchVenues =async() =>{
-  const response = await fetch('http://localhost:3000/admin/add-venue/api');
-  if(!response.ok){
-    throw new Error("Unable to fetch data")
-  }
-  return response.json();
-}
-
 const HomePage = async ({searchParams}) => {
   const query = searchParams?.query || '';
   const currentPage = Number(searchParams?.page) || 1;
 
-  const eventPromise = await fetchEvents();
-  const venuePromise = await fetchVenues();
-  const bannerPromise = await fetchBannerEvent();
-
-  const [ event, venue, banner ] = await Promise.all([ eventPromise, venuePromise, bannerPromise ])
+  const banner = await fetchBannerEvent();
 
   return (
-    <section className="flex flex-col p-4 gap-3">
+    <section className="flex flex-col py-4 px-2 gap-3">
       <div className="flex flex-col gap-3 bg-white py-2 sticky top-0">
         <div className="flex gap-1 tablet:gap-5 items-center justify-start tablet:justify-center">
           <MdLocationOn size={20} className="text-red-500" />
@@ -86,10 +67,8 @@ const HomePage = async ({searchParams}) => {
           </div>
         </div>
 
-        <div className="flex gap-4 my-4 overflow-hidden">
-          {event.map(item =>(
-            <Card key={item._id} href={`events/${item._id}`} name={item.name} location={item.location} src={item.image} />            
-          ))}
+        <div className="mt-2">
+          <UpcomEvent />
         </div>
       </div>
 
@@ -106,14 +85,12 @@ const HomePage = async ({searchParams}) => {
           </div>
         </div>
 
-        <div className="flex gap-4 my-4 overflow-x-scroll">
-          {venue.map(item =>(
-            <Card key={item._id} href={`venues/${item._id}`} name={item.name} location={item.location} src={item.image} />            
-          ))}
+        <div className="mt-2">
+          <CardDisplay />   
         </div>
       </div>
 
-      {/* <CardDisplay /> */}
+      
     </section>
   );
 };
