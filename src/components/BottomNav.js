@@ -9,7 +9,7 @@ const BottomNav = () => {
     const pathname = usePathname();
 
   return (
-    <nav className='w-full bg-black h-14 z-50 sticky bottom-0 flex'>
+    <nav className='w-full bg-black h-14 z-50 sticky left-0 bottom-0 flex'>
         <div className='flex flex-row px-10 w-full text-xs items-center justify-between'>
           <Link className={`link ${pathname === '/' ? 'text-yellow-500' : 'text-white'}`} href={"/"}>
                 <div className='flex flex-col items-center'>

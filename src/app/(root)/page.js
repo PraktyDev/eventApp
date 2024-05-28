@@ -2,9 +2,9 @@ import { MdLocationOn } from "react-icons/md";
 import { CiSquarePlus } from "react-icons/ci";
 import Image from "next/image";
 import Link from "next/link";
-import HomeSearch from "@/components/HomeSearch";
 import CardDisplay from "@/components/CardDisplay";
 import UpcomEvent from "@/components/UpcomEvent";
+import BottomNav from "@/components/BottomNav";
 
 
 const fetchBannerEvent =async() =>{
@@ -13,31 +13,29 @@ const fetchBannerEvent =async() =>{
   return response.json();
 }
 
-const HomePage = async ({searchParams}) => {
-  const query = searchParams?.query || '';
-  const currentPage = Number(searchParams?.page) || 1;
+const HomePage = async () => {
 
   const banner = await fetchBannerEvent();
 
   return (
+    <>
     <section className="flex flex-col py-4 px-2 gap-3">
-      <div className="flex flex-col gap-3 bg-white py-2 sticky top-0">
+      <div className="flex flex-col gap-3 bg-white py-2 sticky top-0 z-50">
         <div className="flex gap-1 tablet:gap-5 items-center justify-start tablet:justify-center">
           <MdLocationOn size={20} className="text-red-500" />
-          <p className="text-sm tablet:text-lg">Location No 6, Trench Avenue, Pluto</p>
+          <p className="text-sm tablet:text-lg">No 6, Trench Avenue, Pluto</p>
         </div>
-
-        <HomeSearch />
       </div>
 
-      <div className="flex flex-col tablet:max-w-lg tablet:mx-auto">
-        <h1 className="text-xl tablet:text-2xl font-semibold flex justify-normal tablet:justify-center ">Happening Now!!!</h1>
+      <div className="flex flex-col tablet:max-w-lg tablet:mx-auto -mt-2">
+        <h1 className="text-lg tablet:text-xl font-semibold flex justify-normal tablet:justify-center ">Happening Now!!!</h1>
         <Link href={`events/${banner._id}`}>
           <Image
             width={4}
             height={3}
+            alt='happening event'
             src={banner.image}
-            className="mx-auto w-[500px] mt-3 h-48 rounded-lg object-cover "
+            className="mx-auto w-[500px] mt-3 h-[160px] rounded-md object-cover "
           />
         </Link>
         <div className="flex flex-row justify-between mt-1">
@@ -49,7 +47,7 @@ const HomePage = async ({searchParams}) => {
             </div>
           </div>
 
-          <div className="text-sm flex gap-1 flex-col items-end">
+          <div className="text-xs flex gap-1 flex-col items-end">
             <p>Entry: ${banner.amount}</p>
             <p>Time: {banner.time}</p>
           </div>
@@ -58,7 +56,7 @@ const HomePage = async ({searchParams}) => {
 
       <div id="upcoming-event">
         <div className="flex flex-row justify-between items-center">
-          <h1 className="text-xl tablet:text-2xl font-semibold">Upcoming Event</h1>
+          <h1 className="text-lg tablet:text-xl font-semibold">Upcoming Event</h1>
           <div className="">
             <Link href='/events' className='flex gap-1 items-center cursor-pointer tablet:hidden'>
               <p className="text-sm opacity-80 ">See all</p>
@@ -74,7 +72,7 @@ const HomePage = async ({searchParams}) => {
 
       <div id="discover-venues">
         <div className="flex flex-row justify-between items-center">
-          <h1 className="text-xl tablet:text-2xl font-semibold">Discover Venues</h1>
+          <h1 className="text-lg tablet:text-xl font-semibold">Discover Venues</h1>
           <div className="flex gap-1 items-center cursor-pointer">
           <div className="">
             <Link href='/venues' className='flex gap-1 items-center cursor-pointer tablet:hidden'>
@@ -89,12 +87,10 @@ const HomePage = async ({searchParams}) => {
           <CardDisplay />   
         </div>
       </div>
-
-      
     </section>
+    <BottomNav />
+    </>
   );
 };
 
 export default HomePage;
-
-

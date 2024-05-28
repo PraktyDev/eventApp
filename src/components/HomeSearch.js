@@ -2,22 +2,23 @@
 import { MdOutlineSearch } from "react-icons/md";
 import { useSearchParams } from "next/navigation";
 import { useRouter, usePathname } from "next/navigation";
-
-const handleSearch = (term) => {
-    console.log(term)
-    const params = new URLSearchParams(searchParams)
-    if(term){
-      params.set('query', term)
-    } else{
-      params.delete('query')
-    }
-    replace(`${pathname}?${params.toString()}`)
-  }
+import { useDebouncedCallback } from 'use-debounce';
 
 const HomeSearch = () => {
     const searchParams = useSearchParams();
     const  pathname = usePathname()
     const { replace } = useRouter()
+    
+    const handleSearch = useDebouncedCallback((term) => {
+        console.log(term)
+        const params = new URLSearchParams(searchParams)
+        if(term){
+          params.set('query', term)
+        } else{
+          params.delete('query')
+        }
+        replace(`${pathname}?${params.toString()}`)
+    }, 300)
 
   return (
     <div className="max-w-lg mx-auto relative w-full flex items-center ">

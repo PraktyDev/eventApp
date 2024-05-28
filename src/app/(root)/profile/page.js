@@ -4,6 +4,7 @@ import { MdLocationOn } from "react-icons/md";
 import { IoIosArrowForward } from "react-icons/io";
 import { FaRegUser } from "react-icons/fa6";
 import Link from "next/link";
+import BottomNav from "@/components/BottomNav";
 
 export const revalidate = 0
   
@@ -20,6 +21,7 @@ const ProfilePage = async () => {
     const user = await fetchUser();
 
   return (
+    <>
     <section className="flex flex-col w-full h-screen gap-3 justify-between pt-4">
         {user.map(item =>(
         <div key={item._id} className="flex flex-col gap-2 items-center justify-center">
@@ -48,6 +50,8 @@ const ProfilePage = async () => {
             </div>
         </div>
     </section>
+    <BottomNav />
+    </>
   )
 }
 

@@ -35,8 +35,8 @@ export default function CardDisplay() {
       >
         <div className="flex gap-4 my-4">
             {venue.map(item =>(
-                <SwiperSlide>          
-                <div key={item._id} className="flex flex-col -gap-1">
+                <SwiperSlide key={item._id}>          
+                <div className="flex flex-col -gap-1">
                 <Link href={`venues/${item._id}`}>
                     <Image width={16} height={9} alt="card" src={item.image} className="object-cover rounded-lg bg-slate-600 w-40 h-32" />
                     <h2 className='font-semibold text-sm tablet:text-md text-nowrap'>{item.name}</h2>

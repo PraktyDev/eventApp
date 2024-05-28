@@ -1,8 +1,10 @@
 import ServiceCard from "@/components/ServiceCard";
 import { MdLocationOn } from "react-icons/md";
+import BottomNav from "@/components/BottomNav";
 
 const ServicePage = () => {
   return (
+    <>
     <section className="flex flex-col w-full p-4 gap-3">
       <div className="flex flex-col gap-3 bg-white py-2 sticky top-0">
         <div className="flex gap-1 items-center">
@@ -22,6 +24,8 @@ const ServicePage = () => {
         <ServiceCard href="/services/contact" name="Contact Us" src="/images/contact.svg" />
       </div>
     </section>
+    <BottomNav />
+    </>
   );
 };
 
