@@ -20,31 +20,33 @@ const EventIdPage = async ({ params }) => {
     const data = await response.json();
 
     return (
-        <section className="flex flex-col h-svh w-full p-4 gap-3 justify-evenly">
-            <div className="flex gap-2 items-center mb-5">
+        <section className="flex flex-col h-svh w-full p-4 gap-1 justify-between">
+            <div className="flex flex-col gap-5" >
+            <div className="flex gap-2 items-center">
                 <Link href="/venues"><FaArrowLeft /></Link>
-                <p>{data.name}</p>
+                <p className="font-semibold">{data.name}</p>
             </div>
-
+            
             <div className="flex flex-col gap-3">
                 <Image
                     width={300} 
                     height={200}
                     src={data.image}
-                    className="w-full h-40 rounded-xl"
+                    className="w-[500px] h-40 rounded-md object-cover"
                 />
                 <div className="flex flex-col items-start gap-2">
                     <div className="flex gap-2 items-center">
                         <MdLocationOn size={20} className="text-red-500" />
-                        <p>{data.location}</p>
+                        <p className="text-sm">{data.location}</p>
                     </div>
                 </div>
             </div>
 
             <div className="flex flex-col">
                 <VenueDescCard about={data.description} schedule={data.time} date={data.date} />
-                <button className="bg-blue-700 hover:bg-blue-600 rounded-md w-full h-10 text-white">{`$${data.price}|Book}`}</button>
             </div>
+            </div>
+            <button className="bg-blue-700 hover:bg-blue-600 rounded-md w-full h-10 text-white text-sm">{`$${data.price}|Book`}</button>
         </section>
     );
 }

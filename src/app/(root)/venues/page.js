@@ -14,7 +14,7 @@ const VenuePage = async ({searchParams}) => {
           <div className="absolute flex w-1/4 justify-start left-0">
             <Link href="/"><IoArrowBackCircleSharp size={20} className="hover:text-slate-800"/></Link>
           </div>
-          <p className="flex w-full justify-center items-center text-lg">Event Venues</p>       
+          <p className="flex w-full justify-center items-center text-md">Event Venues</p>       
         </div>
 
         <HomeSearch />

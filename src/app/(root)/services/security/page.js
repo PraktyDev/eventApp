@@ -1,6 +1,7 @@
-import { MdLocationOn, MdOutlineSearch } from "react-icons/md";
+import { MdOutlineSearch } from "react-icons/md";
 import Image from 'next/image'
 import Link from 'next/link';
+import { IoArrowBackCircleSharp } from "react-icons/io5";
 
 export const revalidate = 0
 
@@ -18,9 +19,11 @@ const SecurityServicePage = async () => {
   return (
     <section className="flex flex-col h-screen w-full p-4 gap-3">
       <div className="flex flex-col gap-3 bg-white py-2 sticky top-0">
-        <div className="flex gap-1 items-center">
-          <MdLocationOn size={20} className="text-red-500" />
-          <p className="text-md">Location No 6, Trench Avenue, Pluto</p>
+        <div className="relative flex justify-center items-center font-semibold">
+          <div className="absolute flex w-1/4 justify-start left-0">
+            <Link href="/services"><IoArrowBackCircleSharp size={20} className="hover:text-slate-800"/></Link>
+          </div>
+          <p className="flex w-full justify-center items-center text-md">Security</p>       
         </div>
 
         <div className="relative w-full flex items-center ">

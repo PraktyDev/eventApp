@@ -10,14 +10,14 @@ const VenueDescCard = (props) => {
   return (
     <div>
          <div className='flex mb-4 border-b items-center justify-evenly'>
-            <button className={`mr-4 mb-1 ${activeTab ==='about'? 'border-b-2 border-red-800' : ''}`} onClick={() => toggleTab('about')}>About</button>
-            <button className={`mr-4 mb-1 ${activeTab ==='schedule'? 'border-b-2 border-red-800' : ''}`} onClick={() => toggleTab('schedule')}>Schedule</button>
+            <button className={`text-sm mr-4 mb-1 ${activeTab ==='about'? 'border-b-2 border-red-800 font-semibold' : ''}`} onClick={() => toggleTab('about')}>About</button>
+            <button className={`text-sm mr-4 mb-1 ${activeTab ==='schedule'? 'border-b-2 border-red-800 font-semibold' : ''}`} onClick={() => toggleTab('schedule')}>Schedule</button>
          </div>
 
          <div>
             {activeTab ==="about" && (
                 <div className='mb-4 text-sm'>
-                    <h3>Description</h3>
+                    <h3 className='font-semibold'>Description</h3>
                     <p>{props.about}</p>
                 </div>
             )}

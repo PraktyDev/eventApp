@@ -1,6 +1,5 @@
-import Image from "next/image"
+import Image from "next/image";
 import { CiLock } from "react-icons/ci";
-import { MdLocationOn } from "react-icons/md";
 import { IoIosArrowForward } from "react-icons/io";
 import { FaRegUser } from "react-icons/fa6";
 import Link from "next/link";
