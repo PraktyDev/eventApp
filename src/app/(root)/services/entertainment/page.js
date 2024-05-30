@@ -7,7 +7,7 @@ import Link from "next/link";
 const EntertainmentServicePage = async () => {
   return (
     <section className="flex flex-col min-h-screen w-full p-4 gap-3">
-      <div className="sticky top-0 flex flex-col gap-3 bg-white py-2">
+      <div className="sticky top-0 z-50 flex flex-col gap-3 bg-white py-2">
         <div className="relative flex justify-center items-center font-semibold">
           <div className="absolute flex w-1/4 justify-start left-0">
             <Link href="/services"><IoArrowBackCircleSharp size={20} className="hover:text-slate-800"/></Link>

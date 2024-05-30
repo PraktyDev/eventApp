@@ -5,7 +5,8 @@ import Link from "next/link";
 import CardDisplay from "@/components/CardDisplay";
 import UpcomEvent from "@/components/UpcomEvent";
 import BottomNav from "@/components/BottomNav";
-
+import { Suspense } from "react";
+import Loading from "./Loading"
 
 const fetchBannerEvent =async() =>{
   const id = "663dac922a61e1339adf770a";
@@ -66,7 +67,9 @@ const HomePage = async () => {
         </div>
 
         <div className="mt-2">
-          <UpcomEvent />
+          <Suspense fallback={<Loading /> }>
+            <UpcomEvent />
+          </Suspense>
         </div>
       </div>
 
@@ -84,7 +87,9 @@ const HomePage = async () => {
         </div>
 
         <div className="mt-2">
-          <CardDisplay />   
+          <Suspense fallback={<Loading />}>
+            <CardDisplay />
+          </Suspense>   
         </div>
       </div>
     </section>

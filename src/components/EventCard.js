@@ -19,6 +19,7 @@ const EventCard = async (query) => {
     <div className="flex flex-col gap-3">
     {event.map(item =>(
     <div key={item._id} className="flex flex-col gap-2">
+      <Link href={`/events/${item._id}`}>
       <Image
         width={16}
         height={9}
@@ -26,6 +27,7 @@ const EventCard = async (query) => {
         alt="events"
         className="w-full h-32 rounded-md object-cover"
       />
+      </Link>
       <div className="flex flex-row justify-between">
         <div className="flex flex-col items-start">
           <Link href={`/events/${item._id}`}><p className="font-semibold text-md">{item.name}</p></Link>

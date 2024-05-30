@@ -19,12 +19,14 @@ const VenueCard = async () => {
     <div className="flex flex-col gap-3">
     {venue.map(item =>(
     <div key={item._id} className="flex flex-col gap-2">
+      <Link href={`/venues/${item._id}`}>
       <Image
         width={16}
         height={9}
         src={item.image}
         className="w-full h-32 rounded-md object-cover "
       />
+      </Link>
       <div className="flex flex-row justify-between">
         <div className="flex flex-col items-start">
           <Link href={`/venues/${item._id}`}><p className="font-semibold text-md">{item.name}</p></Link>

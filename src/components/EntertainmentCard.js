@@ -107,20 +107,20 @@ const EntertainmentCard = () => {
   };
   return (
     <div>
-      <Swiper slidesPerView={4.5} spaceBetween={0} className=" mb-4">
-        <SwiperSlide>
+      <Swiper slidesPerView={3.3} spaceBetween={20} className="mb-4 border-t-0.5 border-blue-500">
+        <SwiperSlide className="text-center" >
           <button
-            className={`mb-1 ${
-              activeTab === "all" ? "border-b-2 border-red-800" : ""
+            className={`w-32 bg-slate-100 rounded-sm p-1 ${
+              activeTab === "all" ? "border-b-2 border-red-800 font-semibold" : ""
             }`}
             onClick={() => toggleTab("all")}
           >
             All
           </button>
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide className="text-center">
           <button
-            className={`mb-1 ${
+            className={`w-32 bg-slate-100 rounded-sm p-1 ${
               activeTab === "mcs" ? "border-b-2 border-red-800" : ""
             }`}
             onClick={() => toggleTab("mcs")}
@@ -128,50 +128,50 @@ const EntertainmentCard = () => {
             MCs
           </button>
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide className="text-center">
           <button
-            className={`mb-1 ${
-              activeTab === "djs" ? "border-b-2 border-red-800" : ""
+            className={`w-32 bg-slate-100 rounded-sm p-1 ${
+              activeTab === "djs" ? "border-b-2 border-red-800 font-semibold" : ""
             }`}
             onClick={() => toggleTab("djs")}
           >
             DJs
           </button>
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide className="text-center">
           <button
-            className={`mb-1 ${
-              activeTab === "comedian" ? "border-b-2 border-red-800" : ""
+            className={`w-32 bg-slate-100 rounded-sm p-1 ${
+              activeTab === "comedian" ? "border-b-2 border-red-800 font-semibold" : ""
             }`}
             onClick={() => toggleTab("comedian")}
           >
             Comedian
           </button>
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide className="text-center">
           <button
-            className={`mb-1 ${
-              activeTab === "dancers" ? "border-b-2 border-red-800" : ""
+            className={`w-32 bg-slate-100 rounded-sm p-1 ${
+              activeTab === "dancers" ? "border-b-2 border-red-800 font-semibold" : ""
             }`}
             onClick={() => toggleTab("dancers")}
           >
             Dancers
           </button>
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide className="text-center">
           <button
-            className={`mb-1 text-nowrap ${
-              activeTab === "music bands" ? "border-b-2 border-red-800" : ""
+            className={`mb-1 text-nowrap w-32 bg-slate-100 rounded-sm p-1 ${
+              activeTab === "music bands" ? "border-b-2 border-red-800 font-semibold" : ""
             }`}
             onClick={() => toggleTab("music bands")}
           >
             Music Bands
           </button>
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide className="text-center">
           <button
-            className={`mb-1 text-nowrap ${
-              activeTab === "sound engineer" ? "border-b-2 border-red-800" : ""
+            className={`mb-1 text-nowrap w-32 bg-slate-100 rounded-sm p-1 ${
+              activeTab === "sound engineer" ? "border-b-2 border-red-800 font-semibold" : ""
             }`}
             onClick={() => toggleTab("sound engineer")}
           >

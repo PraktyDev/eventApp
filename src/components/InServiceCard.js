@@ -17,7 +17,7 @@ const InServiceCard = (props) => {
          <div>
             {activeTab ==="about" && (
                 <div className='mb-4 text-sm'>
-                    <h3>Description</h3>
+                    <h3 className="font-semibold">Description</h3>
                     <p>{props.description}</p>
                 </div>
             )}
