@@ -36,19 +36,19 @@ const HomePage = async () => {
             height={3}
             alt='happening event'
             src={banner.image}
-            className="mx-auto w-[500px] mt-3 h-[160px] rounded-md object-cover "
+            className="mx-auto w-[500px] tablet:w-[1000px] mt-3 h-[160px] tablet:h-[200px] rounded-md object-cover "
           />
         </Link>
-        <div className="flex flex-row justify-between mt-1">
+        <div className="flex flex-row justify-between tablet:justify-center mt-1">
           <div className="flex flex-col items-start">
-            <Link href={`events/${banner._id}`}><p className="font-semibold text-md">{banner.name}</p></Link>
-            <div className="flex gap-1 items-center">
+            <Link href={`events/${banner._id}`}><p className="font-semibold text-md tablet:text-xl">{banner.name}</p></Link>
+            <div className="flex tablet:hidden gap-1 items-center">
               <MdLocationOn size={15} className="text-red-500" />
               <p className="text-sm">{banner.location}</p>
             </div>
           </div>
 
-          <div className="text-xs flex gap-1 flex-col items-end">
+          <div className="text-xs flex tablet:hidden gap-1 flex-col items-end">
             <p>Entry: ${banner.amount}</p>
             <p>Time: {banner.time}</p>
           </div>
@@ -56,8 +56,8 @@ const HomePage = async () => {
       </div>
 
       <div id="upcoming-event">
-        <div className="flex flex-row justify-between items-center">
-          <h1 className="text-lg tablet:text-xl font-semibold">Upcoming Event</h1>
+        <div className="flex flex-row justify-between tablet:justify-center items-center">
+          <h1 className="text-lg tablet:text-xl font-semibold tablet:border-b-2 border-blue-500">Upcoming Event</h1>
           <div className="">
             <Link href='/events' className='flex gap-1 items-center cursor-pointer tablet:hidden'>
               <p className="text-sm opacity-80 ">See all</p>
@@ -74,8 +74,8 @@ const HomePage = async () => {
       </div>
 
       <div id="discover-venues">
-        <div className="flex flex-row justify-between items-center">
-          <h1 className="text-lg tablet:text-xl font-semibold">Discover Venues</h1>
+        <div className="flex flex-row justify-between tablet:justify-center items-center">
+          <h1 className="text-lg tablet:text-xl font-semibold tablet:border-b-2 border-blue-500">Discover Venues</h1>
           <div className="flex gap-1 items-center cursor-pointer">
           <div className="">
             <Link href='/venues' className='flex gap-1 items-center cursor-pointer tablet:hidden'>
