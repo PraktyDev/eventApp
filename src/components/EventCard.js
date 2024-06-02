@@ -16,7 +16,7 @@ const EventCard = async (query) => {
   const event = await fetchEvents(query);
 
   return (
-    <div className="flex flex-col gap-3">
+    <div className="flex flex-col tablet:grid grid-cols-2 laptop:grid-cols-3 gap-3">
     {event.map(item =>(
     <div key={item._id} className="flex flex-col gap-2">
       <Link href={`/events/${item._id}`}>
@@ -25,7 +25,7 @@ const EventCard = async (query) => {
         height={9}
         src={item.image}
         alt="events"
-        className="w-full h-32 rounded-md object-cover"
+        className="w-full h-48 rounded-md object-cover"
       />
       </Link>
       <div className="flex flex-row justify-between">

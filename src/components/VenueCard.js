@@ -16,7 +16,7 @@ const VenueCard = async () => {
   const venue = await fetchVenues();
 
   return (
-    <div className="flex flex-col gap-3">
+    <div className="flex flex-col tablet:grid grid-cols-2 laptop:grid-cols-3 gap-3">
     {venue.map(item =>(
     <div key={item._id} className="flex flex-col gap-2">
       <Link href={`/venues/${item._id}`}>
@@ -24,7 +24,7 @@ const VenueCard = async () => {
         width={16}
         height={9}
         src={item.image}
-        className="w-full h-32 rounded-md object-cover "
+        className="w-full h-48 rounded-md object-cover "
       />
       </Link>
       <div className="flex flex-row justify-between">

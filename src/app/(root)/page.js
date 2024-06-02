@@ -31,7 +31,10 @@ const HomePage = async () => {
       </div>
 
       <div className="flex flex-col tablet:max-w-lg tablet:mx-auto -mt-2">
+        <div className="flex flex-col tablet:items-center">
         <h1 className="text-lg tablet:text-xl font-semibold flex justify-normal tablet:justify-center ">Happening Now!!!</h1>
+        <div className="hidden tablet:block w-14 h-1 bg-blue-500 rounded-2xl"></div>
+        </div>
         <Link href={`events/${banner._id}`}>
           <Image
             width={4}

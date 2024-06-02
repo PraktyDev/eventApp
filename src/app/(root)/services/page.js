@@ -1,10 +1,12 @@
 import ServiceCard from "@/components/ServiceCard";
 import { MdLocationOn } from "react-icons/md";
 import BottomNav from "@/components/BottomNav";
+import TopNav from "@/components/TopNav";
 
 const ServicePage = () => {
   return (
     <>
+    <TopNav />
     <section className="flex flex-col w-full p-4 gap-3">
       <div className="flex flex-col gap-3 bg-white py-2 sticky top-0">
         <div className="flex gap-1 items-center">
@@ -13,7 +15,7 @@ const ServicePage = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-2 gap-4 w-full justify-items-center">
+      <div className="grid grid-cols-2 tablet:grid-cols-3 laptop:grid-cols-4 gap-4 w-full justify-items-center">
         <ServiceCard href="/services/entertainment" name="Entertainment" src="/images/entertainment.svg" />
         <ServiceCard href="/events" name="Event Venues" src="/images/eventvenue.svg" />
         <ServiceCard href="/services/security" name="Security Personnel" src="/images/security.svg" />
