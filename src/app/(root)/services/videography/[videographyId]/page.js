@@ -18,20 +18,20 @@ const VideographyIdPage = async ({ params }) => {
                 <p>{data.name}</p>
             </div>
 
-            <div className="flex flex-col gap-3">
+            <div className="flex flex-col tablet:flex-row gap-3">
                 <Image
-                    width={300} 
-                    height={200}
+                    width={500} 
+                    height={500}
                     src={data.image}
-                    className="w-full h-40 rounded-md object-cover"
+                    className="w-full tablet:w-1/2 h-40 tablet:h-[400px] laptop:h-full rounded-md object-cover"
                 />
+                <div className="flex flex-col tablet:w-1/2 justify-between">
+                    <InServiceCard description={data.description} />
+                    <button className="hidden tablet:block text-sm bg-blue-700 hover:bg-blue-600 rounded-md w-full h-10 text-white">{`$${data.amount}|Per Hour`}</button>
+                </div>
             </div>
-
-            <div className="flex flex-col">
-                <InServiceCard description={data.description} />
             </div>
-            </div>
-            <button className="text-sm bg-blue-700 hover:bg-blue-600 rounded-md w-full h-10 text-white">{`$${data.amount}|Per Hour`}</button>
+            <button className="block tablet:hidden text-sm bg-blue-700 hover:bg-blue-600 rounded-md w-full h-10 text-white">{`$${data.amount}|Per Hour`}</button>
         </section>
     );
 }
