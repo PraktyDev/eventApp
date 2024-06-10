@@ -4,14 +4,6 @@ import Link from "next/link";
 import { FaArrowLeft } from "react-icons/fa6";
 import { MdLocationOn } from "react-icons/md";
 
-export async function generateStaticParams() {
-  const venues = await fetch("http://localhost:3000/admin/add-venue/api").then(
-    (res) => res.json()
-  );
-  return venues.map((venue) => {
-    venueId: venue._id;
-  });
-}
 
 const VenueIdPage = async ({ params }) => {
   const { venueId } = params;
