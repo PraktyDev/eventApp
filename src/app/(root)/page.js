@@ -41,7 +41,7 @@ const HomePage = async () => {
             height={3}
             alt='happening event'
             src={banner.image}
-            className="mx-auto w-[500px] tablet:w-[1500px] mt-3 h-[160px] tablet:h-[200px] rounded-md object-cover "
+            className="mx-auto w-[500px] tablet:w-3/5 mt-3 h-[160px] tablet:h-[200px] rounded-md object-cover "
           />
         </Link>
         <div className="flex flex-row justify-between tablet:justify-center mt-1">

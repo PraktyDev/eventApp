@@ -44,7 +44,7 @@ const LoginPage = () => {
 
       <div className="flex justify-center">
         <p className="">
-          Don't have an account? <Link href="/register" className="text-blue-600 hover:text-blue-500">Sign Up</Link>
+          Dont have an account? <Link href="/register" className="text-blue-600 hover:text-blue-500">Sign Up</Link>
         </p>
       </div>
 
