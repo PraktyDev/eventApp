@@ -5,14 +5,14 @@ import { CiCalendarDate, CiClock1 } from "react-icons/ci";
 import { FaArrowLeft } from "react-icons/fa6";
 import { MdLocationOn } from "react-icons/md";
 
-export async function generateStaticParams() {
-  const events = await fetch("http://localhost:3000/admin/add-event/api").then(
-    (res) => res.json()
-  );
-  return events.map((event) => {
-    eventId: event._id;
-  });
-}
+// export async function generateStaticParams() {
+//   const events = await fetch("http://localhost:3000/admin/add-event/api").then(
+//     (res) => res.json()
+//   );
+//   return events.map((event) => {
+//     eventId: event._id;
+//   });
+// }
 
 const EventIdPage = async ({ params }) => {
   const { eventId } = params;
