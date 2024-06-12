@@ -9,7 +9,7 @@ import TopNav from "@/components/TopNav";
 export const revalidate = 0
   
 const fetchUser = async() =>{
-  const response = await fetch('http://localhost:3000/register/api');
+  const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/register/api`);
   if(!response.ok){
     throw new Error("Unable to fetch data")
   }

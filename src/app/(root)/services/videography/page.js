@@ -7,7 +7,7 @@ export const revalidate = 0;
 
 const fetchVideo = async () => {
   const response = await fetch(
-    "http://localhost:3000/admin/add-videography/api"
+    `${process.env.NEXT_PUBLIC_API_URL}/admin/add-videography/api`
   );
   if (!response.ok) {
     throw new Error("Unable to fetch data");

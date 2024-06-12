@@ -7,7 +7,7 @@ import { FaArrowLeft } from "react-icons/fa6";
 const McIdPage = async ({ params }) => {   
     const { mcId } = params
 
-    const response = await fetch(`http://localhost:3000/admin/add-mc/api/${params.mcId}`);
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/add-mc/api/${params.mcId}`);
     const data = await response.json();
 
     return (

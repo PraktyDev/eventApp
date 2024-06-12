@@ -8,7 +8,7 @@ export const revalidate = 0
 const SoundIdPage = async ({ params }) => {   
     const { soundId } = params
 
-    const response = await fetch(`http://localhost:3000/admin/add-sound/api/${params.soundId}`);
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/add-sound/api/${params.soundId}`);
     const data = await response.json();
 
     return (

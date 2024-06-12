@@ -7,7 +7,7 @@ import { FaArrowLeft } from "react-icons/fa6";
 const CateringIdPage = async ({ params }) => {   
     const { cateringId } = params
 
-    const response = await fetch(`http://localhost:3000/admin/add-catering/api/${params.cateringId}`);
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/add-catering/api/${params.cateringId}`);
     const data = await response.json();
 
     return (

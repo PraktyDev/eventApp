@@ -7,7 +7,7 @@ export const revalidate = 0;
 
 const fetchPhoto = async () => {
   const response = await fetch(
-    "http://localhost:3000/admin/add-photography/api"
+    `${process.env.NEXT_PUBLIC_API_URL}/admin/add-photography/api`
   );
   if (!response.ok) {
     throw new Error("Unable to fetch data");

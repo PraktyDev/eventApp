@@ -5,7 +5,7 @@ import { MdLocationOn } from "react-icons/md";
 export const dynamic = "force-dynamic"
 
 const fetchVenues =async() =>{
-  const response = await fetch('http://localhost:3000/admin/add-venue/api', { cache: "no-store"});
+  const response = await fetch('/admin/add-venue/api', { cache: "no-store"});
   if(!response.ok){
     throw new Error("Unable to fetch data")
   }

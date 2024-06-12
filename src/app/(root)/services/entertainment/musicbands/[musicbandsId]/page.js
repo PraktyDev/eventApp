@@ -7,7 +7,7 @@ import { FaArrowLeft } from "react-icons/fa6";
 const MusicbandsIdPage = async ({ params }) => {   
     const { musicbandsId } = params
 
-    const response = await fetch(`http://localhost:3000/admin/add-musicbands/api/${params.musicbandsId}`);
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/add-musicbands/api/${params.musicbandsId}`);
     const data = await response.json();
 
     return (

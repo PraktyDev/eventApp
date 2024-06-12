@@ -6,7 +6,7 @@ import { IoArrowBackCircleSharp } from "react-icons/io5";
 export const revalidate = 0;
 
 const fetchSecurity = async () => {
-  const response = await fetch("http://localhost:3000/admin/add-security/api");
+  const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/add-security/api`);
   if (!response.ok) {
     throw new Error("Unable to fetch data");
   }

@@ -16,7 +16,7 @@ const EntertainmentCard = () => {
   const [sound, setSound] = useState([]);
 
   const fetchDj = () => {
-    fetch("http://localhost:3000/admin/add-dj/api")
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/add-dj/api`)
       .then((response) => {
         if (!response.ok) {
           throw new Error("Failed to fetch data");
@@ -29,7 +29,7 @@ const EntertainmentCard = () => {
   };
 
   const fetchMc = () => {
-    fetch("http://localhost:3000/admin/add-mc/api")
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/add-mc/api`)
       .then((response) => {
         if (!response.ok) {
           throw new Error("Failed to fetch data");
@@ -42,7 +42,7 @@ const EntertainmentCard = () => {
   };
 
   const fetchComedian = () => {
-    fetch("http://localhost:3000/admin/add-comedian/api")
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/add-comedian/api`)
       .then((response) => {
         if (!response.ok) {
           throw new Error("Failed to fetch data");
@@ -55,7 +55,7 @@ const EntertainmentCard = () => {
   };
 
   const fetchDancers = () => {
-    fetch("http://localhost:3000/admin/add-dancers/api")
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/add-dancers/api`)
       .then((response) => {
         if (!response.ok) {
           throw new Error("Failed to fetch data");
@@ -68,7 +68,7 @@ const EntertainmentCard = () => {
   };
 
   const fetchMusicbands = () => {
-    fetch("http://localhost:3000/admin/add-musicbands/api")
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/add-musicbands/api`)
       .then((response) => {
         if (!response.ok) {
           throw new Error("Failed to fetch data");
@@ -81,7 +81,7 @@ const EntertainmentCard = () => {
   };
 
   const fetchSound = () => {
-    fetch("http://localhost:3000/admin/add-sound/api")
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/add-sound/api`)
       .then((response) => {
         if (!response.ok) {
           throw new Error("Failed to fetch data");

@@ -11,7 +11,7 @@ export default function CardDisplay() {
     const [venue, setVenue] = useState([])
 
     const fetchVenues = () =>{
-        fetch('http://localhost:3000/admin/add-venue/api')
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/add-venue/api`)
         .then((response)=>{
             if(!response.ok){
                 throw new Error("Unable to fetch data")

@@ -7,7 +7,7 @@ import { FaArrowLeft } from "react-icons/fa6";
 const ComedianIdPage = async ({ params }) => {   
     const { comedianId } = params
 
-    const response = await fetch(`http://localhost:3000/admin/add-comedian/api/${params.comedianId}`);
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/add-comedian/api/${params.comedianId}`);
     const data = await response.json();
 
     return (

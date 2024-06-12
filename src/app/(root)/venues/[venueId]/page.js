@@ -9,7 +9,7 @@ const VenueIdPage = async ({ params }) => {
   const { venueId } = params;
 
   const response = await fetch(
-    `http://localhost:3000/admin/add-venue/api/${params.venueId}`
+    `${process.env.NEXT_PUBLIC_API_URL}/admin/add-venue/api/${params.venueId}`
   );
   const data = await response.json();
 

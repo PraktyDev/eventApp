@@ -12,7 +12,7 @@ import Hero from "@/components/Hero";
 
 const fetchBannerEvent =async() =>{
   const id = "663dac922a61e1339adf770a";
-  const response = await fetch(`http://localhost:3000/admin/add-event/api/${id}`);
+  const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/add-event/api/${id}`);
   return response.json();
 }
 

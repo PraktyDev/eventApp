@@ -8,7 +8,7 @@ export const revalidate = 0
 const DancersIdPage = async ({ params }) => {   
     const { dancersId } = params
 
-    const response = await fetch(`http://localhost:3000/admin/add-dancers/api/${params.dancersId}`);
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/add-dancers/api/${params.dancersId}`);
     const data = await response.json();
 
     return (

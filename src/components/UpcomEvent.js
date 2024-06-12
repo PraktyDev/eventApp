@@ -11,7 +11,7 @@ export default function UpcomEvent() {
     const [event, setEvent] = useState([])
 
     const fetchEvents = () =>{
-        fetch('http://localhost:3000/admin/add-event/api')
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/add-event/api`)
         .then((response)=>{
             if(!response.ok){
                 throw new Error("Unable to fetch data")

@@ -7,7 +7,7 @@ import { FaArrowLeft } from "react-icons/fa6";
 const SecurityIdPage = async ({ params }) => {   
     const { securityId } = params
 
-    const response = await fetch(`http://localhost:3000/admin/add-security/api/${params.securityId}`);
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/add-security/api/${params.securityId}`);
     const data = await response.json();
 
     return (
