@@ -8,6 +8,7 @@ import BottomNav from "@/components/BottomNav";
 import { Suspense } from "react";
 import Loading from "./Loading"
 import TopNav from "@/components/TopNav";
+import Hero from "@/components/Hero";
 
 const fetchBannerEvent =async() =>{
   const id = "663dac922a61e1339adf770a";
@@ -30,6 +31,8 @@ const HomePage = async () => {
         </div>
       </div>
 
+      <Hero />
+
       <div className="flex flex-col tablet:max-w-lg tablet:mx-auto -mt-2">
         <div className="flex flex-col tablet:items-center">
         <h1 className="text-lg tablet:text-xl font-semibold flex justify-normal tablet:justify-center ">Happening Now!!!</h1>
@@ -41,7 +44,7 @@ const HomePage = async () => {
             height={3}
             alt='happening event'
             src={banner.image}
-            className="mx-auto w-[500px] tablet:w-3/5 mt-3 h-[160px] tablet:h-[200px] rounded-md object-cover "
+            className="mx-auto w-[500px] tablet:w-[1000px] mt-3 h-[160px] tablet:h-[200px] rounded-md object-cover "
           />
         </Link>
         <div className="flex flex-row justify-between tablet:justify-center mt-1">

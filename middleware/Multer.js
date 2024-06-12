@@ -1,13 +1,10 @@
 import multer from 'multer';
-import path from 'path';
 
 // Multer configuration
 const storage = multer.diskStorage({
-    destination: (req, file, cb) => {
-        cb(null, 'public/images');
-    },
+    destination: 'public/images',
     filename: (req, file, cb) => {
-        cb(null, file.image + '-' + Date.now() + path.extname(file.originalname));
+       return cb(null, `${Date.now()}${file.originalname}`);
     },
 });
 
