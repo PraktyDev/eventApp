@@ -26,7 +26,7 @@ const HomePage = async () => {
   return (
     <>
     <TopNav />
-    <section className="flex flex-col py-4 px-2 gap-3 min-h-screen justify-evenly">
+    <section className="flex flex-col py-4 px-2 gap-8 min-h-screen">
       <div className="flex flex-col gap-3 bg-white py-2 sticky top-0 z-10">
         <div className="flex gap-1 tablet:gap-5 items-center justify-start tablet:justify-center">
           <MdLocationOn size={20} className="text-red-500" />
@@ -47,7 +47,7 @@ const HomePage = async () => {
             height={3}
             alt='happening event'
             src={banner.image}
-            className="mx-auto w-[500px] tablet:w-[1000px] mt-3 h-[160px] tablet:h-[200px] rounded-md object-cover "
+            className="mx-auto w-[500px] tablet:w-[1000px] mt-3 h-[250px] tablet:h-[400px] rounded-md object-cover "
           />
         </Link>
         <div className="flex flex-row justify-between tablet:justify-center mt-1">
