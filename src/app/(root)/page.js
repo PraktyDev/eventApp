@@ -17,6 +17,9 @@ const fetchBannerEvent =async() =>{
 }
 
 const HomePage = async () => {
+  if(!process.env.NEXT_PUBLIC_API_URL){
+    return null;
+  }
 
   const banner = await fetchBannerEvent();
 
