@@ -26,7 +26,7 @@ const HomePage = async () => {
   return (
     <>
     <TopNav />
-    <section className="flex flex-col py-4 px-2 gap-3">
+    <section className="flex flex-col py-4 px-2 gap-3 min-h-screen justify-evenly">
       <div className="flex flex-col gap-3 bg-white py-2 sticky top-0 z-10">
         <div className="flex gap-1 tablet:gap-5 items-center justify-start tablet:justify-center">
           <MdLocationOn size={20} className="text-red-500" />

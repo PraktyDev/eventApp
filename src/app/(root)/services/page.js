@@ -17,7 +17,7 @@ const ServicePage = () => {
 
       <div className="grid grid-cols-2 tablet:grid-cols-3 laptop:grid-cols-4 gap-4 w-full justify-items-center">
         <ServiceCard href="/services/entertainment" name="Entertainment" src="/images/entertainment.svg" />
-        <ServiceCard href="/events" name="Event Venues" src="/images/eventvenue.svg" />
+        <ServiceCard href="/venues" name="Event Venues" src="/images/eventvenue.svg" />
         <ServiceCard href="/services/security" name="Security Personnel" src="/images/security.svg" />
         <ServiceCard href="/services/catering" name="Catering Services" src="/images/catering.svg" />
         <ServiceCard href="/services/photography" name="Photography" src="/images/photography.svg" />

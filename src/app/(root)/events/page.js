@@ -10,7 +10,7 @@ const EventPage = async ({searchParams}) => {
   return (
     <>
     <TopNav />
-    <section className="flex flex-col h-full w-full p-4 gap-3">
+    <section className="flex flex-col min-h-screen w-full p-4 gap-3">
       <div className="flex flex-col gap-3 bg-white py-2 sticky top-0">
         <div className="flex gap-1 items-center">
           <MdLocationOn size={20} className="text-red-500" />
