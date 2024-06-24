@@ -12,12 +12,15 @@ const fetchVenues =async() =>{
   return response.json()
 }
 
-const VenueCard = async () => {
-  const venue = await fetchVenues();
+const VenueCard = async ({ query }) => {
+  const venues = await fetchVenues();
+  const filteredVenue = Array.isArray(venues) ? venues.filter((venue) =>{
+    return venue.name.toLowerCase().includes(query.toLowerCase());
+  }) : [];
 
   return (
     <div className="flex flex-col tablet:grid grid-cols-2 laptop:grid-cols-3 gap-3">
-    {venue.map(item =>(
+    {Array.isArray(venues) && filteredVenue.map(item =>(
     <div key={item._id} className="flex flex-col gap-2">
       <Link href={`/venues/${item._id}`}>
       <Image

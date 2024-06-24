@@ -38,7 +38,7 @@ export default function CardDisplay() {
     {venue.map(item =>(      
         <div key={item._id} className="flex flex-col -gap-1">
         <Link href={`venues/${item._id}`}>
-            <Image width={16} height={9} alt="card" src={item.image} className="object-cover rounded-lg bg-slate-600 w-40 tablet:w-40 h-32 tablet:h-40" />
+            <Image width={16} height={9} alt="card" src={item.image} className="object-cover rounded-lg bg-slate-600 w-40 tablet:w-40 laptop:w-72 h-32 tablet:h-40" />
             <h2 className='font-semibold text-sm tablet:text-md text-nowrap'>{item.name}</h2>
         </Link>
         <div className="flex items-center">

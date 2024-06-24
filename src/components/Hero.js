@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 const Hero = () => {
   return (
-    <section className="min-h-screen relative hidden tablet:flex flex-1 shrink-0 items-center justify-center overflow-hidden bg-slate-100 py-12 shadow-lg">
+    <section className="min-h-screen relative hidden tablet:flex flex-1 shrink-0 items-center justify-center overflow-hidden bg-slate-100 shadow-lg">
       <Image src={"/images/bg.jpg"} height={500} width={500} alt="background photo" className="absolute inset-0 h-screen w-full object-cover object-center rounded-md" />
       <div className="absolute inset-0 bg-black opacity-50 mix-blend-multiply"></div>
       <div className="relative flex flex-col items-center mt-5 max-w-xl">

@@ -12,12 +12,16 @@ const fetchEvents =async() =>{
   return response.json()
 }
 
-const EventCard = async (query) => {
-  const event = await fetchEvents(query);
+const EventCard = async ({ query }) => {
+  const events = await fetchEvents();
+
+  const filteredEvent = Array.isArray(events) ? events.filter((event) =>{
+    return event.name.toLowerCase().includes(query.toLowerCase());
+  }) : [];
 
   return (
     <div className="flex flex-col tablet:grid grid-cols-2 laptop:grid-cols-3 gap-3">
-    {event.map(item =>(
+    {Array.isArray(events) && filteredEvent.map(item =>(
     <div key={item._id} className="flex flex-col gap-2">
       <Link href={`/events/${item._id}`}>
       <Image

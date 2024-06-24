@@ -20,7 +20,7 @@ const VenuePage = async ({searchParams}) => {
         <HomeSearch />
       </div>
 
-      <VenueCard />
+      <VenueCard query={query} />
     </section>
   )
 }
