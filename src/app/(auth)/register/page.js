@@ -7,21 +7,30 @@ import { MdOutlineLock } from "react-icons/md";
 import { useState } from "react";
 
 const RegisterPage = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    dob: "",
-    gender: "",
-    email: "",
-    phone: "",
-    image: "",
-    nationality: "",
-    password: "",
-  });
+  // const [formData, setFormData] = useState({
+  //   name: "",
+  //   dob: "",
+  //   gender: "",
+  //   email: "",
+  //   phone: "",
+  //   image: "",
+  //   nationality: "",
+  //   password: "",
+  // });
 
-  const handleFormInput = (e) =>{
-    const { name, value } = e.target
-    setFormData({ ...formData, [name]: value })
-  }
+  // const handleFormInput = (e) =>{
+  //   const { name, value } = e.target
+  //   setFormData({ ...formData, [name]: value })
+  // }
+
+  const [name, setName] = useState('')
+  const [dob, setDob] = useState('')
+  const [gender, setGender] = useState('')
+  const [email, setEmail] = useState('')
+  const [phone, setPhone] = useState('')
+  const [image, setImage] = useState('')
+  const [nationality, setNationality] = useState('')
+  const [password, setPassword] = useState('')
 
   const handleSubmit = (e) =>{
     e.preventDefault();
@@ -31,9 +40,17 @@ const RegisterPage = () => {
         headers: {
           'Content-Type' : 'application/json',
         },
-        body: JSON.stringify(formData)
+        body: JSON.stringify({
+          name,
+          dob,
+          gender,
+          email,
+          phone,
+          image,
+          nationality,
+          password
+        })
       })
-      console.log('Posted Successfully')
     } catch (error) {
       console.error('Error:', error.message)
     }
@@ -50,35 +67,35 @@ const RegisterPage = () => {
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
         <div className="flex flex-col gap-4 items-center ">
           <div className="relative w-full flex items-center">
-            <input name="name" value={formData.name} onChange={handleFormInput} className="border border-black pl-10  w-full py-2 px-4 rounded-md" type="text" placeholder="Full name"/>            
+            <input name="name" value={name} onChange={(e)=>setName(e.target.value)} className="border border-black pl-10  w-full py-2 px-4 rounded-md" type="text" placeholder="Full name"/>            
             <div className="absolute left-4 text-blue-400"><FaRegUser /></div>
           </div>
           <div className="relative w-full flex items-center">
-            <input name="dob" value={formData.dob} onChange={handleFormInput} className="border border-black pl-10  w-full py-2 px-4 rounded-md" type="text" placeholder="Date of birth"/>            
+            <input name="dob" value={dob} onChange={(e)=>setDob(e.target.value)} className="border border-black pl-10  w-full py-2 px-4 rounded-md" type="text" placeholder="Date of birth"/>            
             <div className="absolute left-4 text-blue-400"><FaRegUser /></div>
           </div>
           <div className="relative w-full flex items-center">
-            <input name="gender" value={formData.gender} onChange={handleFormInput} className="border border-black pl-10  w-full py-2 px-4 rounded-md" type="text" placeholder="Gender"/>            
+            <input name="gender" value={gender} onChange={(e)=>setGender(e.target.value)} className="border border-black pl-10  w-full py-2 px-4 rounded-md" type="text" placeholder="Gender"/>            
             <div className="absolute left-4 text-blue-400"><FaRegUser /></div>
           </div>
           <div className="relative w-full flex items-center">
-            <input name="email" value={formData.email} onChange={handleFormInput} className="border border-black pl-10 w-full py-2 px-4 rounded-md" type="email" placeholder="Email"/>            
+            <input name="email" value={email} onChange={(e)=>setEmail(e.target.value)} className="border border-black pl-10 w-full py-2 px-4 rounded-md" type="email" placeholder="Email"/>            
             <div className="absolute left-4 text-blue-400"><FiMail /></div>
           </div>
           <div className="relative w-full flex items-center">
-            <input name="phone" value={formData.phone} onChange={handleFormInput} className="border border-black pl-10 w-full py-2 px-4 rounded-md" type="text" placeholder="Phone number"/>            
+            <input name="phone" value={phone} onChange={(e)=>setPhone(e.target.value)} className="border border-black pl-10 w-full py-2 px-4 rounded-md" type="text" placeholder="Phone number"/>            
             <div className="absolute left-4 text-blue-400"><FiMail /></div>
           </div>
           <div className="relative w-full flex items-center">
-            <input name="image" value={formData.image} onChange={handleFormInput} className="border border-black pl-10 w-full py-2 px-4 rounded-md" type="text" placeholder="Enter your photo"/>            
+            <input name="image" value={image} onChange={(e)=>setImage(e.target.value)} className="border border-black pl-10 w-full py-2 px-4 rounded-md" type="text" placeholder="Enter your photo"/>            
             <div className="absolute left-4 text-blue-400"><FiMail /></div>
           </div>
           <div className="relative w-full flex items-center">
-            <input name="nationality" value={formData.nationality} onChange={handleFormInput} className="border border-black pl-10 w-full py-2 px-4 rounded-md" type="text" placeholder="Nationality"/>            
+            <input name="nationality" value={nationality} onChange={(e)=>setNationality(e.target.value)} className="border border-black pl-10 w-full py-2 px-4 rounded-md" type="text" placeholder="Nationality"/>            
             <div className="absolute left-4 text-blue-400"><FiMail /></div>
           </div>
           <div className="relative w-full flex items-center">
-            <input name="password" value={formData.password} onChange={handleFormInput} className="border border-black pl-10 w-full py-2 px-4 rounded-md" type="password" placeholder="Password" />            
+            <input name="password" value={password} onChange={(e)=>setPassword(e.target.value)} className="border border-black pl-10 w-full py-2 px-4 rounded-md" type="password" placeholder="Password" />            
             <div className="absolute left-4 text-blue-400"><MdOutlineLock /></div>
           </div>          
         </div>
